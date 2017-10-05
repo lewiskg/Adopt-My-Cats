@@ -1,3 +1,5 @@
 "use strict";
 
-console.log("in main.js");
+const getCatData = require('./xhr.js');
+
+getCatData();  // gets cat data
