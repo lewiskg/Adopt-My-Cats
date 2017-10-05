@@ -25,20 +25,33 @@ const printToDom = (data) => {
 		output +=  	 `<p>cat #: ${i + 1}</p>`;
 		output +=  '</div>';
 	}
-	// stuff.innerHTML = output;
-	console.log(output);
 	$("div#cats-holder").append(output);
 };
 
 module.exports = printToDom;
-},{"../lib/node_modules/jquery/dist/jquery.js":4}],2:[function(require,module,exports){
+},{"../lib/node_modules/jquery/dist/jquery.js":5}],2:[function(require,module,exports){
 "use strict";
 
+let $ = require("../lib/node_modules/jquery/dist/jquery.js");
 const getCatData = require('./xhr.js');
 
-getCatData();  // gets cat data
+const eventz = () => {
+	let numOfCatz = 1;
+	$('button#btn-enter').on('click', function(){
+		numOfCatz = parseInt($('input#input-catz').val());
+		getCatData(numOfCatz);  // gets cat data
+	});
+};
 
-},{"./xhr.js":3}],3:[function(require,module,exports){
+module.exports = eventz;
+},{"../lib/node_modules/jquery/dist/jquery.js":5,"./xhr.js":4}],3:[function(require,module,exports){
+"use strict";
+
+const initializeEventListeners = require('./events.js');
+
+initializeEventListeners();
+
+},{"./events.js":2}],4:[function(require,module,exports){
 "use strict";
 
 const printToDom = require('./domWriter.js');
@@ -52,17 +65,16 @@ const loadBroken = () => {
 //console.log("Broken Load");
 };
 
-const catXHR = () => {
+const catXHR = (numOfCats) => {
 	let myCats = new XMLHttpRequest();
 	myCats.addEventListener("load", catLoadWorks);
 	myCats.addEventListener("load", loadBroken);
-	// myCats.open("GET","./db/cats.json");
-	myCats.open("GET","https://random-dogs-api.herokuapp.com/cats/15");
+	myCats.open("GET",`https://random-dogs-api.herokuapp.com/cats/${numOfCats}`);
 	myCats.send();
 };
 
 module.exports = catXHR;
-},{"./domWriter.js":1}],4:[function(require,module,exports){
+},{"./domWriter.js":1}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
@@ -10317,4 +10329,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[2]);
+},{}]},{},[3]);

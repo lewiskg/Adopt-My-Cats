@@ -24,8 +24,6 @@ const printToDom = (data) => {
 		output +=  	 `<p>cat #: ${i + 1}</p>`;
 		output +=  '</div>';
 	}
-	// stuff.innerHTML = output;
-	console.log(output);
 	$("div#cats-holder").append(output);
 };
 

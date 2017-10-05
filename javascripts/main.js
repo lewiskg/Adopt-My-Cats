@@ -1,5 +1,5 @@
 "use strict";
 
-const getCatData = require('./xhr.js');
+const initializeEventListeners = require('./events.js');
 
-getCatData();  // gets cat data
+initializeEventListeners();
