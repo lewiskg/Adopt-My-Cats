@@ -24,11 +24,14 @@ const eventz = () => {
 		}
 	});
 // gets number of cats requsted on enter key down
-	$('input#input-catz').on('keydown', function(e) {
-		if(e.keyCode === 13 && $('input#input-catz').val()) {
-			numOfCatz = parseInt($('input#input-catz').val());
+	$('#inp-get-catz').on('keydown', function(e) {
+		if(e.keyCode === 13 && $('#inp-get-catz').val()) {
+			numOfCatz = parseInt($('#inp-get-catz').val());
 			getCatData(numOfCatz);  // gets cat data
-			$('input#input-catz').blur();	
+			$(this).hide();
+			$('#lab-get-catz').hide();
+			$('#btn-get-catz').hide();
+			$('#btn-hide-catz').show();
 		}
 	});
 // hides cats with < 10 toes

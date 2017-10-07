@@ -1,6 +1,7 @@
 body {
-	background-color: lightgreen;
+	background-color: FloralWhite;
 	background-image: url("https://i.pinimg.com/736x/75/3c/02/753c02970d5ccdbd482312f60329c491--pattern-paper-printable-paper.jpg");
+	/*background-image: url("http://www.powerpointhintergrund.com/uploads/2017/05/cat-paw-print-background-neko-cat-paw-prints-kona-bay-27.jpeg");*/
 	background-repeat: repeat;
 }
 
@@ -9,7 +10,7 @@ body {
 	min-height: 400px;
 	border: solid black 2px;
 	box-shadow: 5px 5px 5px #888888;
-	background-color: white;
+	background-color: FloralWhite;
 }
 
 img {
@@ -36,4 +37,13 @@ h1, header {
 #btn-hide-catz {
 	display: block;
 	margin: 0 auto;
+}
+
+h1, #lab-get-catz {
+	background-color: white;
+}
+
+input[type=text] {
+    background-color: FloralWhite;
+    color: black;
 }
