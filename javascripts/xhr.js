@@ -8,7 +8,7 @@ const catLoadWorks = function() {
 };
 
 const loadBroken = () => {
-//console.log("Broken Load");
+	alert("Broken Load");
 };
 
 const catXHR = (numOfCats) => {
