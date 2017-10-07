@@ -1,5 +1,7 @@
 body {
 	background-color: lightgreen;
+	background-image: url("https://i.pinimg.com/736x/75/3c/02/753c02970d5ccdbd482312f60329c491--pattern-paper-printable-paper.jpg");
+	background-repeat: repeat;
 }
 
 .cat-card {
