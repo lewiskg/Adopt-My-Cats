@@ -3,12 +3,18 @@
 let $ = require("../lib/node_modules/jquery/dist/jquery.js");
 const getCatData = require('./xhr.js');
 
+$('#btn-hide-catz').hide();  // initially hide button for disabled cats
+
 const eventz = () => {
 	let numOfCatz = 1;
 // gets number of cats requsted on button click
-	$('button#btn-enter').on('click', function() {
-		numOfCatz = parseInt($('input#input-catz').val());
+	$('#btn-get-catz').on('click', function() {
+		numOfCatz = parseInt($('#inp-get-catz').val());
 		getCatData(numOfCatz);  // gets cat data
+		$(this).hide();
+		$('#inp-get-catz').hide();
+		$('#lab-get-catz').hide();
+		$('#btn-hide-catz').show();
 	});
 
 // clears input field
@@ -24,6 +30,10 @@ const eventz = () => {
 			getCatData(numOfCatz);  // gets cat data
 			$('input#input-catz').blur();	
 		}
+	});
+// hides cats with < 10 toes
+	$('#btn-hide-catz').on('click', function() {
+		$('.disabled-cat').parent().parent().css('visibility', 'hidden');
 	});
 };
 

@@ -30,3 +30,8 @@ h1, header {
 .disabled-cat {
 	color: red;
 }
+
+#btn-hide-catz {
+	display: block;
+	margin: 0 auto;
+}

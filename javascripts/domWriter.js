@@ -5,7 +5,7 @@ var $ = require("../lib/node_modules/jquery/dist/jquery.js");
 const printToDom = (data) => {
 	// const stuff = document.getElementById("cats-holder");
 	let output = "";
-	$("div#cats-holder").text(output);
+	$('#div-cats-holder').text(output);
 	for ( let i = 0; i < data.length; i++ ) {
 		output += '<div class="cat-card col-md-2 col-sm-2 col-xs-2">';
 		output +=    '<div class="image-container">';
@@ -25,7 +25,7 @@ const printToDom = (data) => {
 		output +=  	 `<p><span class="attr">cat #:</span> ${i + 1}</p>`;
 		output +=  '</div>';
 	}
-	$("div#cats-holder").append(output);
+	$('#div-cats-holder').append(output);
 };
 
 module.exports = printToDom;
