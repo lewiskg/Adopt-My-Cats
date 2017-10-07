@@ -3,7 +3,6 @@
 var $ = require("../lib/node_modules/jquery/dist/jquery.js");
 
 const printToDom = (data) => {
-	// const stuff = document.getElementById("cats-holder");
 	let output = "";
 	$('#div-cats-holder').text(output);
 	for ( let i = 0; i < data.length; i++ ) {
